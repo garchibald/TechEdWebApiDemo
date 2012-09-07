@@ -14,12 +14,19 @@ NOTE: This solution uses NuGet package restore
 
 Steps Involved:
 1. Create Model Members.cs (Code First Entity Framework Data Model)
+
 2. Create Folder DAL
+
 3. Create TechEdContext.cs (Optionally set connection string in contructor)
-4. Create TechEdInit.cs 
+
+4. Create TechEdInit.cs
+ 
 5. Register Database.SetInitializer in Global.asax.cs
+
 6. Compile Solution to build Model
+
 7. Right Click - Add controller MembersController.cs
+
    a) Choose Models.Members and TechExContext
 
    NOTE: This default controller will be updated to add

@@ -82,11 +82,14 @@ Extended Members Controller
 
 4. Register AutoMapper to/from domain model e.g.
 
-	AutoMapper.Mapper.CreateMap<Models.Member, TechEd.Integration.ServiceModels.Member>();
+    AutoMapper.Mapper.CreateMap<Models.Member, TechEd.Integration.ServiceModels.Member>();
     AutoMapper.Mapper.CreateMap<TechEd.Integration.ServiceModels.Member, Models.Member>();
 
 5. Change MembersController.cs to reference TechEd.Integration.ServiceModels
+
 6. Change MembersController to map to/from domain model
+
 7. Change Queryable to use ODataQueryOptions
+
 8. Make use of using OData.Framework; defined in ODataExtensions.cs for extra parsing of OData queries
 	

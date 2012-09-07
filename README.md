@@ -12,7 +12,7 @@ Licence see Licence.txt
 NOTE: This solution uses NuGet package restore
 (see http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)
 
-Steps Involved 
+Steps Involved:
 1. Create Model Members.cs (Code First Entity Framework Data Model)
 2. Create Folder DAL
 3. Create TechEdContext.cs (Optionally set connection string in contructor)

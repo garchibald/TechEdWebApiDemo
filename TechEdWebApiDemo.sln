@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechEdWebApiDemo", "TechEdWebApiDemo\TechEdWebApiDemo.csproj", "{7B78946B-1E26-4A2D-A19F-55E0E9A3283E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechEd.Integration", "TechEd.Integration\TechEd.Integration.csproj", "{C7931DD9-F661-42BA-AD7F-E50DE5E18AAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C604F41B-8FBE-4479-848C-BBF2F49A86E2}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B78946B-1E26-4A2D-A19F-55E0E9A3283E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B78946B-1E26-4A2D-A19F-55E0E9A3283E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B78946B-1E26-4A2D-A19F-55E0E9A3283E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B78946B-1E26-4A2D-A19F-55E0E9A3283E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7931DD9-F661-42BA-AD7F-E50DE5E18AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7931DD9-F661-42BA-AD7F-E50DE5E18AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7931DD9-F661-42BA-AD7F-E50DE5E18AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7931DD9-F661-42BA-AD7F-E50DE5E18AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

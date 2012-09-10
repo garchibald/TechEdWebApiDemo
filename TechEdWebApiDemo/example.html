@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css" >
+        a {margin-left: 10px}
+    </style>
+    <script src="Scripts/jquery-1.7.1.js"></script>
+</head>
+    <body>
+        <!-- Input -->
+        <div>
+            <label for="LastName">Last Name</label>
+            <input type="text" id="LastName"/>
+            <button id="search">Search</button>
+        </div>
+        
+      
+        <div id="results"></div>
+      
+        <!-- Optional password -->  
+        <div>
+            <label for="username">User Name</label>
+            <input type="text" id="Username"/>
+            <label for="password">Password</label>
+            <input type="password" id="Password"/>
+        </div>
+        <script>
+            $(function () {
+                var commands = new Commands();
+                $("button").click(function() {
+                    commands.search($("#LastName").val());
+                });
+
+            });
+        
+            function Commands() {
+                var cmds = {
+                    search: function(name) {
+                        $.ajax({
+                            url: '/api/Members?$filter=startswith(LastName,\'' + name + '\')',
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            type: 'GET',
+                            success: function(data, textStatus, jqXHR) {
+                                cmds.showResults(data);
+                            },
+                            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                $("#results").empty().append("error - " + errorThrown);
+                            }
+                        });
+                    },
+                    deleteItem: function (id) {
+                        $.ajax({
+                            url: '/api/Members/' + id,
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            type: 'DELETE',
+                            //beforeSend: function (xhr) { xhr.setRequestHeader("Authorization", cmds.loginCredentials()); },
+                            success: function (data, textStatus, jqXHR) {
+                                cmds.search($("#LastName").val());
+                            },
+                            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                $("#results").empty().append("error - " + errorThrown);
+                            }
+                        });
+                    },
+                    
+                    loginCredentials: function () {
+                        var tok = $("input#username").val() + ':' + $("input#password").val();
+                        var hash = btoa(tok);
+                        return "Basic " + hash;
+                    },
+                    showResults : function ( data ) {
+                        var list = $("<ul>");
+                        $(data).each(function (index, value) {
+                            list.append($("<li>")
+                                .append(value.LastName)
+                                .append($("<a href='#'/>")
+                                    .click(function () { cmds.deleteItem(value.MemberID) })
+                                    .append("delete"))
+                            );
+                        });
+                        $("#results").empty().append(list);
+                    }
+                };
+
+                return cmds;
+            }
+        
+
+        </script>
+    </body>
+</html>

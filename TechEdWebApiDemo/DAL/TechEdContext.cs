@@ -16,7 +16,7 @@ namespace TechEdWebApiDemo.DAL
     /// <remarks>If no base connection string is specified then DefaultConnection will be used</remarks>
     public class TechEdContext : DbContext
     {
-        public TechEdContext() //: base("TechEd")
+        public TechEdContext() : base("TechEd")
         {
 
         }
